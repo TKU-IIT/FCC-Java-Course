@@ -1,39 +1,37 @@
 public class Team {
     private String teamName;
-    private boolean validity = true;
     Team(){
         this.teamName = "";
     }
     
     Team(String teamName){
-        this.teamName = teamName;
-    }
-    
-    Team(Object j){
-        validity=false;
-        System.err.println("INVALID VALUE");
-    }
-    void setTeamName(String teamName){
-        if(validity)
+        if(teamName!=null)
             this.teamName = teamName;
         else
-            System.err.println("INVALID VALUE");
+            System.out.println("INVALID VALUE");
     }
-    void setTeamName(Object j){
-        validity =false;
-        System.err.println("INVALID VALUE");
+    
+    void setTeamName(String teamName){
+        if(teamName!=null)
+            this.teamName = teamName;
+        else
+            System.out.println("INVALID VALUE");
     }
+
     boolean equals(Team a){
+        if(teamName==null)
+            System.out.println("INVALID VALUE");
         return (a.teamName.equals(this.teamName));
     }
     String getTeamName(){
+        if(teamName==null)
+            System.out.println("INVALID VALUE");
         return this.teamName;
     }
     public String toString(){
-        if(validity)
-            return "TEAM: " +this.teamName; 
-        else
-            return "INVALID VALUE";
+        if(teamName==null)
+            System.out.println("INVALID VALUE");
+        return "TEAM: " +this.teamName; 
     }
     
 }
