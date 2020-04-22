@@ -17,14 +17,14 @@ public class Team {
         if(validity)
             this.teamName = teamName;
         else
-            System.err.print("INVALID VALUE");
+            System.err.println("INVALID VALUE");
     }
     void setTeamName(Object j){
         validity =false;
-        System.err.print("INVALID VALUE");
+        System.err.println("INVALID VALUE");
     }
     boolean equals(Team a){
-        return (a.teamName==this.teamName);
+        return (a.teamName.equals(this.teamName));
     }
     String getTeamName(){
         return this.teamName;
