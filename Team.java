@@ -19,9 +19,17 @@ public class Team {
     }
 
     boolean equals(Team a){
-        if(teamName==null)
-            System.out.println("INVALID VALUE");
+        
+        if(a.teamName==null||a==null){
+            //System.out.println("INVALID VALUE");
+            return false;
+        }
+        
+        if(a==this)
+            return true;
+        
         return (a.teamName.equals(this.teamName));
+        
     }
     String getTeamName(){
         if(teamName==null)
@@ -31,6 +39,7 @@ public class Team {
     public String toString(){
         if(teamName==null)
             System.out.println("INVALID VALUE");
+        
         return "TEAM: " +this.teamName; 
     }
     
