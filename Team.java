@@ -17,20 +17,21 @@ public class Team {
         else
             System.out.println("INVALID VALUE");
     }
-
-    boolean equals(Team a){
+    @Override
+    public boolean equals(Object obj){
+        Team a = (Team) obj;
         
-        if(a.teamName==null||a==null){
-            //System.out.println("INVALID VALUE");
-            return false;
-        }
+        return (a.teamName==this.teamName||a.teamName==this.teamName||a==this||obj==this);
+    }
+    public boolean equals(Team a){
         
         if(a==this)
             return true;
         
-        return (a.teamName.equals(this.teamName));
+        return (a.teamName==this.teamName);
         
     }
+    
     String getTeamName(){
         if(teamName==null)
             System.out.println("INVALID VALUE");
