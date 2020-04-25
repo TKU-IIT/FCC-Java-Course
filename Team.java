@@ -1,7 +1,6 @@
 public class Team {
-    private String teamName;
+    private String teamName = "";
     Team(){
-        this.teamName = "";
     }
     
     Team(String teamName){
