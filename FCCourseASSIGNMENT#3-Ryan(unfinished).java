@@ -51,7 +51,7 @@ public class CorporateName{
         if(obj == obj){
             return true;
         }
-
+	//The method wouldn't compare the private member content
         return false;
     }
     public boolean equals(CorporateName n1){
