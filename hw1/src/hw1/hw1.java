@@ -22,7 +22,8 @@ public class hw1 {
 			System.out.println();
 		}
 	}
-	public static int[][] findCrowdedGrids(File coordinates_file) {
+	public static @SuppressWarnings("unchecked")
+public static int[][] findCrowdedGrid(File coordinates_file) {
 	    ArrayList<ArrayList<Integer>> tmp_coords = new ArrayList<ArrayList<Integer>>();
 	    int lines =0;
 	    try {
@@ -48,20 +49,21 @@ public class hw1 {
 	    		}
 	    		
 	    		Set hs = new HashSet(tmp_coords);
-	    		if(hs.size()==tmp_coords.size()) {
-	    			return null;
-	    		}
+	    		if(hs.size()==tmp_coords.size())
+	    		    return null;
 	    		ArrayList<ArrayList<Integer>> clist = new ArrayList<ArrayList<Integer>>(hs);
 	    		ArrayList<ArrayList<Integer>> crowded = new ArrayList<ArrayList<Integer>>()
 ;	    		for(ArrayList<Integer> i : clist) {
 	    			int cnt = 0;
+	    			int step = 0;
 	    			for(ArrayList<Integer> j : tmp_coords) {
-	    				
+	    				step++;
 	    				if(i.equals(j)) {
 	    					cnt++;
+	    					
 	    				}
 	    			}
-	    			if(cnt>2) {
+	    			if(cnt>=3) {
 	    				crowded.add(i);
 	    			}
 	    		}
@@ -77,7 +79,7 @@ public class hw1 {
 	    return null;
 	}
 	
-	public static int[] toIntArray(List<Integer> list)  {
+	 public static int[] toIntArray(List<Integer> list)  {
 	    int[] ret = new int[list.size()];
 	    int i = 0;
 	    for (Integer e : list)  
