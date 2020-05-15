@@ -1,0 +1,2 @@
+module hw1 {
+}
